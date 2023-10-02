@@ -56,8 +56,29 @@
         <li><a href="#pre-requisite-4">Separate Azure Tenant to test "Purchasing"</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#step-1">Deploy Commercial Marketplace SaaS Accelerator</a>
+      <ul>
+        <li><a href="#step-1-1">Create App Registrations</a></li>        
+        <li><a href="#step-1-2">Deploy the SaaS Accelerator</a></li>                
+      </ul>
+    </li>
+    <li>
+      <a href="#step-2">Create a SaaS Offer on the Azure Marketplace</a>
+      <ul>
+        <li><a href="#step-2-1">Basic Setup</a></li>
+        <li><a href="#step-2-2">Setup Properties</a></li>
+        <li><a href="#step-2-3">Setup Offer Listing</a></li>
+        <li><a href="#step-2-4">Setup Plan Overview</a></li>
+        <li><a href="#step-2-5">Setup Preview Audience</a></li>
+        <li><a href="#step-2-6">Setup Resell through CSPs</a></li>
+        <li><a href="#step-2-7">Setup Technical Configuration</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
+
+
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -116,6 +137,198 @@ Ensuring that all requisite permissions are correctly assigned and operational b
 #### Separate Azure Tenant to test "Purchasing"
 
 Ensure you have access to a separate Azure Tenant to test the "Purchasing" functionality effectively. If needed, create a separate one using [cdx.transform.microsoft.com](https://cdx.transform.microsoft.com/). Having a dedicated tenant for testing purposes is crucial to isolate variables and accurately assess the purchasing process, ensuring that any modifications or updates do not interfere with the live environment.
+
+Alternatively, you might have a `Personal` Azure Subscription (the free one). That should work too.
+
+Once you have it, all you need is the `Azure Active Directory or Microsoft Account email address` associated with this Azure Subscription. When you publish or update an offer, we will create a preview version accessible to only the audience that you specify based on the email address captured. In my example this is `admin@my-domain.org` but you should capture your own.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- Steps to Publish a SaaS Offer  -->
+## Steps to Publish a SaaS Offer
+
+To publish a SaaS offer, please complete the steps outlined below, ensuring all prerequisites are met beforehand. It's imperative to comply with all the preparatory requirements to avoid any hindrances during the publication process. Careful adherence to each step and prerequisite ensures a smoother, more streamlined experience, enabling the successful deployment of your SaaS offer.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="step-1"></a>
+
+<!-- STEP 1  -->
+### STEP 1: Initial Setup: App Registrations and SaaS Accelerator Deployment
+
+This initial step involves creating app registrations as depicted in Step 1.1 and deploying the SaaS accelerator in Step 1.2.
+
+<a id="step-1-1"></a>
+
+#### 1. Create App Registrations
+
+1. **Login to Azure Portal**: As the "Publisher", log into the [Azure Portal](https://portal.azure.com/).
+
+2. **Access Azure AD and Create App Registrations**: Open Azure AD and create two app registrations as described below:
+   
+3. **App Registration 1 - Single Tenant App Registration**:
+    - Create this registration.
+    - After creation, add a client secret.
+    - Capture the following details: tenant ID, client ID, and client secret.
+
+4. **App Registration 2 - Multi Tenant App Registration**:
+    - This registration supports the login of the WebApps created as part of this deployment.
+    - You will need to update the App Reg Redirect URIs post-deployment.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="step-1-2"></a>
+
+#### 2. Deploy the SaaS Accelerator
+
+1. **Login to Azure Portal**: Make sure you are logged in as the "Publisher".
+
+2. **Initiate Resource Creation**: Click on "Create a Resource".
+
+3. **Search for SaaS Accelerator**: Enter “SaaS Accelerator” in the search bar.
+
+4. **Verify Publisher**: In your search results, ensure that Microsoft is the listed publisher.
+
+5. **Initiate Deployment**: Click "Create" and select a "Basic Deployment".
+
+6. Add complete the template & hit create.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="step-2"></a>
+
+<!-- STEP 2  -->
+### STEP 2: Create a SaaS Offer on the Azure Marketplace
+
+To create a new SaaS offer, follow the steps below:
+
+<a id="step-2-1"></a>
+
+#### 1. Basic Setup
+   1. **Navigate to Partner Center**: Go to [Partner Center](https://partner.microsoft.com/).
+   2. **Access Marketplace Offers**: Click on "Marketplace Offers."
+   3. **Initiate New Offer**: Click "New Offer" and select "Software as a Service."
+   4. **Configure Offer ID**: Add a new Offer ID (e.g., `your-biz-name_your-prod-name-offer-001` or `example_company_example_product_offer_001`). Use only lowercase, alphanumeric characters, dashes, or underscores. The ID cannot end with "-preview" and is immutable after "Create" is selected.
+   5. **Set Offer Alias**: Add an Offer alias (e.g., `Example Product Offer 001`). This alias is for internal reference within Partner Center and won’t be visible in the marketplace listing.
+   6. **Create the Offer**: Click "Create." You will be redirected to the "Offer Setup" page, with some details pre-filled. Retain the default settings.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="step-2-2"></a>
+
+#### 2. Setup `Properties`
+   1. **Access Properties Page**: Navigate to the "Properties" page.
+   2. **Select Category and Subcategory**: Click "Categories," then choose a category and a subcategory (e.g., `AI + Machine Learning` as the category and `Knowledge Mining` as the subcategory). Any available pair should suffice.
+   3. **Choose Industry and Vertical**: Click `Industries` and select an industry and its corresponding vertical (e.g., `Education` as the industry and `Libraries and Museums` as the vertical). Any available options are suitable.
+   4. **Agree to Standard Contract**: Select the checkbox corresponding to "Use the Standard Contract for Microsoft’s commercial marketplace?"
+   5. **Save draft**: Lastly, click the "Save draft" button.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="step-2-3"></a>
+
+#### 3. Setup `Offer Listing`
+   1. **Access Listing Page**: Once the basic setup and offer properties are configured, navigate to the "Offer Listing" page from the offer’s menu.
+   2. **Input Offer Details**: In this section, enter all relevant details about the offer. These details will be displayed in the marketplace and will include:
+        - **Name**: (e.g. `Edu Insight Miner SaaS App`) 
+        - **Search results summary**: Write a concise summary highlighting the key features and benefits of your offer.
+
+            e.g. `Knowledge Mining Software as a Service solution designed to empower education.`
+        - **Description**: Provide a detailed description of your offer, elaborating on its features, benefits, and use cases. Utilize markdown formatting to structure the content effectively.
+
+            e.g. `This offer provides a Knowledge Mining Software as a Service solution designed to empower education sector entities such as libraries and museums by extracting valuable insights from their data resources to enhance learning and research outcomes.`
+        - **Getting Started Instructions**: 
+            e.g. `To embark on your knowledge mining journey with EduInsight Miner, start by pointing the service to your school or museum's catalog or database. Navigate to our user-friendly interface and follow the intuitive, step-by-step instructions to link your institutional resources. Once connected, you can immediately begin leveraging the power of advanced data analysis to uncover insights and enrich the learning and research experience at your institution. Our dedicated support team is available to assist you with any queries or challenges you might encounter as you explore the untapped knowledge within your establishment.`
+        - **Privacy policy link**: e.g. `https://privacy.microsoft.com/en-us/privacystatement`
+        - **Support and Engineering contact Details**: 
+            - Name: John Smith
+            - Email: johnsmith@contoso.com
+            - Phone: e.g. `13 20 58`
+            - Supportlink: `https://support.microsoft.com/en-au`
+        - **Supporting Documents**: Add the following document:
+            - e.g. Upload this [sample document](docs/sample/supporting-document.pdf)
+            - Note: Don't forget to add a Name after uploadind the document.
+        - **Logos**: Add the following logos
+            - e.g. use this for [216x216](docs/sample/logo-216x216.png)             
+        - **Screenshots**: Add the following screenshots
+            - e.g. use this [screenshot](docs/sample/screenshot.png)
+            - Note: Don't forget to add a caption after uploading the image.
+        3. **Save draft**: Lastly, click the "Save draft" button.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="step-2-4"></a>
+
+#### 4. Setup `Plan Overview`
+
+To set up the Plan Overview, please perform the following steps:
+
+   1. **Navigate to Plan Overview**: Begin by accessing the “Plan Overview” section.
+   2. **Create a New Plan**: Select the "Create new plan" option.
+   3. **Input Plan ID**: Enter a Plan ID with less than 50 characters (e.g., `edu-insights-miner-basic-plan`). Utilize only lowercase, alphanumeric characters, dashes, or underscores. Note that the ID cannot end with "-preview" and is unmodifiable after "Create" is selected.
+   4. **Specify Plan Name**: Designate a Plan Name (e.g., `Edu Insight Miner SaaS Basic Plan`).
+   5. **Create the Plan**: Click "Create."
+   6. **Add a Description**: Input a brief description for the plan (e.g., `This is a basic free plan.`).
+   7. **Save the Draft**: Press the "Save draft" button.
+   8. **Configure Pricing and Availability**: Proceed to the "Pricing and availability" section and:
+        1. **Edit Markets**: Click “edit markets,” select all available markets, and press “save.”
+        2. **Set Pricing**: Choose “Per User” for Pricing.
+        3. **Define Billing Term**: Opt for “1-year” as the billing term, “One-time” as the payment option, and set the Price per payment per user to “0 USD.”
+        4. **Enable Free Trial**: Allow users a one-month free trial by selecting the "Free Trial" option.
+   9. **Save the Draft Again**: Ensure all the entered details are correct and click "Save draft."
+   10. **Review and Await Confirmation**: After saving, please wait a moment for a notification stating “Complete and ready for publish.” Once this notification appears, proceed to “Review and Publish.”
+   11. This should now re-direct you to the `Offer overview` page. At this stage you should see the following are complete:
+        1. Offer setup
+        2. Properties
+        3. Offer listing
+        4. Plan overview
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="step-2-5"></a>
+
+#### 5. Setup `Preview Audience`
+
+Setting up a Preview Audience allows a select group to access and verify your offer before it goes live. This preview version is only available to the audience you designate. To include individuals in your preview audience, you'll need to use either their Azure Active Directory (AAD) or Microsoft Account (MSA) email addresses. Here's how to set it up:
+
+   1. **Navigate to Preview Audience**: Start by going to the “Preview Audience” section.
+   2. **Add Email Addresses**: Input the “Azure Active Directory or Microsoft Account email address” that was recorded during ["Pre-Requisite 4"](#pre-requisite-4).
+   3. **Save the Draft**: After adding the email addresses, click the "Save Draft" button to secure your changes.
+
+Ensuring that your preview audience is correctly set up will facilitate a smoother verification process for your offer’s details before they are made publicly available.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="step-2-6"></a>
+
+#### 6. Setup `Resell through CSPs`
+
+Making your offer available through the Cloud Solution Providers (CSP) program can extend its reach, enabling resellers to offer your solution to their customer base and to incorporate it into bundled solutions. Once live, you may also incentivize your preferred CSP partners by creating margins. For more extensive details about leveraging CSP Private Offers, please refer to the [available documentation](https://learn.microsoft.com/en-au/partner-center/marketplace/azure-private-plan-troubleshooting). 
+
+To configure the resell options through CSPs, perform the following steps:
+
+   1. **Choose CSP Program Partners**: Initially, opt for `No partners in the CSP program`.
+   2. **Save the Draft**: Click "Save draft" to apply your selection.
+
+Remember, the decisions made at this stage can be revised later, allowing you to change your CSP preferences as your offering evolves.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="step-2-7"></a>
+
+#### 7. Setup `Technical Configuration`
+
+In this step, you will link the offer to the "Commercial Marketplace SaaS Accelerator" app which was established in [Step 1](#step-1). Follow the guide below to integrate the information accumulated from the preceding steps:
+
+   1. **Access Technical Configuration**: Navigate your way to the “Technical Configuration” section.
+   
+   2. **Enter Required Details**: Based on the information collected previously, populate the following fields:
+      - **Landing Page URL**: Input the appropriate URL where users will land when they access your offer.
+      - **Connection Webhook**: Provide the connection webhook that will be used to communicate with the offer.
+      - **Microsoft Entra Tenant ID**: Insert the tenant ID related to Microsoft Entra.
+      - **Microsoft Entra Identity Application ID**: Specify the application ID from Microsoft Entra Identity.
+
+Ensure that all the provided details are accurate and correspond to the information gathered in the initial steps, as this will establish the essential connections for your offer’s functionality in the Commercial Marketplace.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- STEP 3  -->
+### STEP 3: Test it
+
+... content
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
