@@ -114,7 +114,7 @@ Before starting the creation or publication of your offer, follow the steps belo
 2. Once logged in, navigate to "My Access."
 3. In the "My Access" section, check if "Marketplace Offers" is listed and if access is granted. 
 
-Please note, if "Marketplace Offers" does not have access granted, you will need to secure the appropriate permissions before proceeding with creating or publishing Marketplace Offers.
+Please note, if "Marketplace Offers" does not have access granted, follow these instructions to create a test account to publish offers on Partner Center: [Create a Test Account for Marketplace Publishing](https://microsoft.sharepoint.com/:w:/t/MasteringtheMarketplace/EQ7xYtzBWIdMpRyIwnfvjqMBavINIAHy717HZCK-2IlLLg?e=2NpKlN)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
