@@ -242,10 +242,10 @@ To create a new SaaS offer, follow the steps below:
             - Name: John Smith
             - Email: johnsmith@contoso.com
             - Phone: e.g. `13 20 58`
-            - Supportlink: `https://support.microsoft.com/en-au`
+            - Support link: `https://support.microsoft.com/en-au`
         - **Supporting Documents**: Add the following document:
             - e.g. Upload this [sample document](docs/sample/supporting-document.pdf)
-            - Note: Don't forget to add a Name after uploadind the document.
+            - Note: Don't forget to add a Name after uploading the document.
         - **Logos**: Add the following logos
             - e.g. use this for [216x216](docs/sample/logo-216x216.png)             
         - **Screenshots**: Add the following screenshots
