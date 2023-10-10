@@ -92,7 +92,7 @@ The [Commercial Marketplace SaaS Accelerator](https://azuremarketplace.microsoft
 <!-- PRE-REQUISITES  -->
 ## Pre-Requisites
 
-Before initiating the creation or publication of the offer, it's imperative to meet certain prerequisites. These are essential steps or requirements that need to be fulfilled to ensure a seamless process and are listed below for your convenience. Please review them carefully and ensure each one is satisfied before proceeding with the publication of your offer.
+There are several prerequisites to meet before starting the creation or publication of an offer. Please review them carefully and ensure each one is satisfied before proceeding with the publication of your offer.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -187,11 +187,11 @@ This initial step involves creating app registrations as depicted in Step 1.1 an
 
 3. **Search for SaaS Accelerator**: Enter “SaaS Accelerator” in the search bar.
 
-4. **Verify Publisher**: In your search results, ensure that Microsoft is the listed publisher.
+4. **Verify Publisher**: In your search results, ensure that "Microsoft Commercial Marketplace" is the listed publisher.
 
 5. **Initiate Deployment**: Click "Create" and select a "Basic Deployment".
 
-6. Add complete the template & hit create.
+6. Fill out the required information in the "Create SaaS Accelerator" page click "Review + create", then "Create".
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
