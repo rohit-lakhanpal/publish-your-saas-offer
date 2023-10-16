@@ -110,7 +110,7 @@ We recommend utilizing a browser like Microsoft Edge for an optimal experience, 
 
 Before starting the creation or publication of your offer, follow the steps below to verify if you have the necessary permissions to create Marketplace Offers in the Microsoft Partner Center:
 
-1. Log into the [Microsoft Partner Center](https://partner.microsoft.com/).
+1. Log into the [Microsoft Partner Center](https://partner.microsoft.com/dashboard).
 2. Once logged in, navigate to "My Access."
 3. In the "My Access" section, check if "Marketplace Offers" is listed and if access is granted. 
 
