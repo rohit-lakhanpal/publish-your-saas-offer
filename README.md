@@ -114,7 +114,7 @@ Before starting the creation or publication of your offer, follow the steps belo
 2. Once logged in, navigate to "My Access."
 3. In the "My Access" section, check if "Marketplace Offers" is listed and if access is granted. 
 
-Please note, if "Marketplace Offers" does not have access granted, follow these instructions to create a test account to publish offers on Partner Center: [Create a Test Account for Marketplace Publishing](https://microsoft.sharepoint.com/:w:/t/MasteringtheMarketplace/EQ7xYtzBWIdMpRyIwnfvjqMBavINIAHy717HZCK-2IlLLg?e=2NpKlN)
+Please note, if "Marketplace Offers" does not have access granted, follow these instructions to create a test account to publish offers on Partner Center: [Create a Test Account for Marketplace Publishing](https://microsoft.sharepoint.com/:w:/t/MasteringtheMarketplace/EQ7xYtzBWIdMpRyIwnfvjqMBavINIAHy717HZCK-2IlLLg?e=2NpKlN). These instructions will result in a new test Azure AD tenant that must be used for the app registrations in step 1 below, as well as for logging in to Partner Center.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -163,7 +163,7 @@ This initial step involves creating app registrations as depicted in Step 1.1 an
 
 #### 1. Create App Registrations
 
-1. **Login to Azure Portal**: As the "Publisher", log into the [Azure Portal](https://portal.azure.com/).
+1. **Login to Azure Portal**: As the "Publisher", log into the [Azure Portal](https://portal.azure.com/).  Remember to log in or switch to the Azure AD tenant created in pre-requisite 2 above, as the app registrations must be created within the correct Azure AD tenant that has permission to publish SaaS offers.
 
 2. **Access Azure AD and Create App Registrations**: Open Azure AD and create two app registrations as described below:
    
