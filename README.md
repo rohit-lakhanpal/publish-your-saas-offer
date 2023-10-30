@@ -183,7 +183,7 @@ This initial step involves creating app registrations as depicted in Step 1.1 an
 
 #### 2. Deploy the SaaS Accelerator
 
-1. **Login to Azure Portal**: Make sure you are logged in as your @microsoft.com address to the FDPO Microsoft tenant.
+1. **Login to Azure Portal**: Make sure you are logged in as your @microsoft.com address to the FDPO Microsoft tenant.  It is recommended to use the FDPO tenant as the SaaS Accelerator provisions chargable Azure resources such as SQL DB, App Service etc.  Provisioning under the FDPO tenant ensures that you don't have to pay a separate Azure bill.
 
 2. **Initiate Resource Creation**: Click on "Create a Resource".
 
@@ -193,7 +193,7 @@ This initial step involves creating app registrations as depicted in Step 1.1 an
 
 5. **Initiate Deployment**: Click "Create" and select a "Basic Deployment".
 
-6. Fill out the required information in the "Create SaaS Accelerator" page click "Review + create", then "Create".
+6. Fill out the required information in the "Create SaaS Accelerator" page click "Review + create", then "Create".  NOTE: use a relatively short unique identifier as a long identifier will cause the deployment to fail.  Ten characters or less is confirmed to work.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -327,10 +327,9 @@ In this step, you will link the offer to the "Commercial Marketplace SaaS Accele
 Ensure that all the provided details are accurate and correspond to the information gathered in the initial steps, as this will establish the essential connections for your offer’s functionality in the Commercial Marketplace.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- STEP 3  -->
-### STEP 3: Test it
+#### 8. Click 'Review and Publish'
 
-... content
+Click the review and publish button. The offer will take about 20-30 minutes to publish, at which point you will receive an "app source preview" link under the "Publisher signoff" column.  Use this app source preview link to test a purchase using one of the accounts listed in 'Preview Audience" above.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
