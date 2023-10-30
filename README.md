@@ -319,10 +319,10 @@ In this step, you will link the offer to the "Commercial Marketplace SaaS Accele
    1. **Access Technical Configuration**: Navigate your way to the “Technical Configuration” section.
    
    2. **Enter Required Details**: Based on the information collected previously, populate the following fields:
-      - **Landing Page URL**: Input the appropriate URL where users will land when they access your offer.
-      - **Connection Webhook**: Provide the connection webhook that will be used to communicate with the offer.
-      - **Microsoft Entra Tenant ID**: Insert the tenant ID related to Microsoft Entra.
-      - **Microsoft Entra Identity Application ID**: Specify the application ID from Microsoft Entra Identity.
+      - **Landing Page URL**: Input the appropriate URL where users will land when they access your offer.  This is the landing page of the SaaS Accelerator portal (eg https://mpndemo-portal.azurewebsites.net)
+      - **Connection Webhook**: Provide the connection webhook that will be used to communicate with the offer.  This is the landing page URL with /Api/AzureWebhook added (eg https://mpndemo-portal.azurewebsites.net/Api/AzureWebhook)
+      - **Microsoft Entra Tenant ID**: Insert the tenant ID related to Microsoft Entra for your single tenant app registration.
+      - **Microsoft Entra Identity Application ID**: Specify the application ID from Microsoft Entra Identity for your single tenant app registration.
 
 Ensure that all the provided details are accurate and correspond to the information gathered in the initial steps, as this will establish the essential connections for your offer’s functionality in the Commercial Marketplace.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
