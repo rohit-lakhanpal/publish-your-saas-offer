@@ -183,7 +183,7 @@ This initial step involves creating app registrations as depicted in Step 1.1 an
 
 #### 2. Deploy the SaaS Accelerator
 
-1. **Login to Azure Portal**: Make sure you are logged in as the "Publisher".
+1. **Login to Azure Portal**: Make sure you are logged in as your @microsoft.com address to the FDPO Microsoft tenant.
 
 2. **Initiate Resource Creation**: Click on "Create a Resource".
 
