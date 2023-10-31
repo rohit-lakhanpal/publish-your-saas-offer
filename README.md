@@ -176,7 +176,7 @@ This initial step involves creating app registrations as depicted in Step 1.1 an
 
 4. **App Registration 2 - Multi Tenant App Registration**:
     - This registration supports the login of the WebApps created as part of this deployment.
-    - You will need to update the App Reg Redirect URIs post-deployment.
+    - You will need to update the App Reg Redirect URIs post-deployment (see step 3 below)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <a id="step-1-2"></a>
@@ -198,6 +198,16 @@ This initial step involves creating app registrations as depicted in Step 1.1 an
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <a id="step-2"></a>
+
+#### 3. Update multi-tenant app registration
+
+1. Open the multi-tenant app registration in the Azure portal
+2. Click "Add a redirect URI" or select "Authentication" in the "Manage" segment of the left hand navigation bar
+3. Click "Add a platform" and click "Web"
+4. Enter the landing page portal URL from the SaaS Accelerator with the path /Home/index in the redirect URI eg https://uniqueid-portal.azurewebsites.net/Home/Index
+5. Enable the ID token option
+6. Click "Configure"
+7. Click "Add URI" and add the admin portal URI with /Home/Index in addition to the landing page portal added in step 4 above and click "Save"
 
 <!-- STEP 2  -->
 ### STEP 2: Create a SaaS Offer on the Azure Marketplace
