@@ -114,9 +114,10 @@ Before starting the creation or publication of your offer, follow the steps belo
 2. Once logged in, navigate to "My Access."
 3. In the "My Access" section, check if "Marketplace Offers" is listed and if access is granted. 
 
+<i>For internal Microsoft employees:<br>
 Please note, if "Marketplace Offers" does not have access granted, follow these instructions to create a test account to publish offers on Partner Center: [Create a Test Account for Marketplace Publishing](https://microsoft.sharepoint.com/:w:/t/MasteringtheMarketplace/EQ7xYtzBWIdMpRyIwnfvjqMBavINIAHy717HZCK-2IlLLg?e=2NpKlN). These instructions will result in a new test Azure AD tenant that must be used for the app registrations in step 1 below, as well as for logging in to Partner Center.  NOTE: 
-* Azure Active Directory is now Microsoft Entra ID
-* Only complete up to "Working with Partner Center Step 2: Enrolling into the Commercial Marketplace Program".  There is no need to complete "Step 3: Completing vetting and authorization" which is only needed for production offers
+  * Azure Active Directory is now Microsoft Entra ID
+  * Only complete up to "Working with Partner Center Step 2: Enrolling into the Commercial Marketplace Program".  There is no need to complete "Step 3: Completing vetting and authorization" which is only needed for production offers</i>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
