@@ -137,7 +137,7 @@ Ensuring that all requisite permissions are correctly assigned and operational b
 
 <!-- Pre-Requisite 4  -->
 ### Pre-Requisite 4
-#### Separate Azure Tenant to test "Purchasing"
+#### Separate Azure Tenant to test "Purchasing" (optional if you want to test purchasing, also possible with a personal Microsoft account)
 
 Ensure you have access to a separate Azure Tenant to test the "Purchasing" functionality effectively. If needed, create a separate one using [cdx.transform.microsoft.com](https://cdx.transform.microsoft.com/). Having a dedicated tenant for testing purposes is crucial to isolate variables and accurately assess the purchasing process, ensuring that any modifications or updates do not interfere with the live environment.
 
