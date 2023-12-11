@@ -125,7 +125,7 @@ Please note, if "Marketplace Offers" does not have access granted, follow these 
 ### Pre-Requisite 3
 #### Permissions to create apps and app registrations on Azure
 
-To ensure a seamless deployment of managed applications, begin by verifying your access and permissions within the [Azure Portal](https://portal.azure.com/). Managed applications require the creation of app registrations in Azure Active Directory (Azure AD), so it is crucial to confirm your ability to perform such tasks.
+SaaS offers require the creation of app registrations in Azure Active Directory (Azure AD), so it is crucial to confirm your ability to perform such tasks.
 
 1. Log in to the [Azure Portal](https://portal.azure.com/).
 2. Verify your permissions to create app registrations.
