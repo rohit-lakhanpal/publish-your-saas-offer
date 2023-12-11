@@ -115,7 +115,7 @@ Before starting the creation or publication of your offer, follow the steps belo
 3. In the "My Access" section, check if "Marketplace Offers" is listed and if access is granted. 
 
 <i>For internal Microsoft employees:<br>
-Please note, if "Marketplace Offers" does not have access granted, follow these instructions to create a test account to publish offers on Partner Center: [Create a Test Account for Marketplace Publishing](https://microsoft.sharepoint.com/:w:/t/MasteringtheMarketplace/EQ7xYtzBWIdMpRyIwnfvjqMBavINIAHy717HZCK-2IlLLg?e=2NpKlN). These instructions will result in a new test Azure AD tenant that must be used for the app registrations in step 1 below, as well as for logging in to Partner Center with the point of view of a Global Admin of a publisher (as opposed to a Microsoft employee).  NOTE: 
+Please note, if "Marketplace Offers" does not have access granted, follow these instructions to create a test account to publish offers on Partner Center: [Create a Test Account for Marketplace Publishing](https://microsoft.sharepoint.com/:w:/t/MasteringtheMarketplace/EQ7xYtzBWIdMpRyIwnfvjqMBavINIAHy717HZCK-2IlLLg?e=2NpKlN). These instructions will result in a new test Azure AD tenant that must be used for the app registrations in step 1 below, as well as for logging in to Partner Center with the point of view of a Global Admin of a publisher (as opposed to someone who has limited permissions to publish on behalf of Microsoft).  NOTE: 
   * Azure Active Directory is now Microsoft Entra ID
   * Only complete up to "Working with Partner Center Step 2: Enrolling into the Commercial Marketplace Program".  There is no need to complete "Step 3: Completing vetting and authorization" which is only needed for production offers</i>
 
@@ -136,8 +136,8 @@ Ensuring that all requisite permissions are correctly assigned and operational b
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Pre-Requisite 4  -->
-### Pre-Requisite 4
-#### Separate Azure Tenant to test "Purchasing" (optional if you want to test purchasing, also possible with a personal Microsoft account)
+### Pre-Requisite 4 (optional)
+#### Separate Azure Tenant to test "Purchasing" (If you want to test purchasing, but that's also possible with a personal Microsoft account)
 
 Ensure you have access to a separate Azure Tenant to test the "Purchasing" functionality effectively. If needed, create a separate one using [cdx.transform.microsoft.com](https://cdx.transform.microsoft.com/). Having a dedicated tenant for testing purposes is crucial to isolate variables and accurately assess the purchasing process, ensuring that any modifications or updates do not interfere with the live environment.
 
@@ -174,17 +174,22 @@ This initial step involves creating app registrations as depicted in Step 1.1 an
     - Create this registration.
     - After creation, add a client secret.
     - Capture the following details: tenant ID, client ID, and client secret.
+    - (This is used to authenticate with the Marketplace APIs, i.e. customer subscription management, start billing, etc)
 
 4. **App Registration 2 - Multi Tenant App Registration**:
     - This registration supports the login of the WebApps created as part of this deployment.
     - You will need to update the App Reg Redirect URIs post-deployment (see step 3 below)
+    - (This is used to log into the SaaS Accelerator web app. Multitenant as
+    -   Customers each authenticate to landing page as their own identities
+    -   Publisher logs into the admin page. This also makes use of Single tenant app reg to authenticate itself to access the Marketplace APIs from the UI.)
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <a id="step-1-2"></a>
 
 #### 2. Deploy the SaaS Accelerator
 
-1. **Login to Azure Portal**: Make sure you are logged in as your @microsoft.com address to the FDPO Microsoft tenant.  It is recommended to use the FDPO tenant as the SaaS Accelerator provisions chargable Azure resources such as SQL DB, App Service etc.  Provisioning under the FDPO tenant ensures that you don't have to pay a separate Azure bill.
+1. **Login to Azure Portal**: Log in as the tenant which you want to use to pay for hosting of the SaaS Accelerator resources. <i>Microsoft employees: Make sure you are logged in as your @microsoft.com address to the FDPO Microsoft tenant.  It is recommended to use the FDPO tenant as the SaaS Accelerator provisions chargable Azure resources such as SQL DB, App Service etc.  Provisioning under the FDPO tenant ensures that you don't have to pay a separate Azure bill under your Publisher tenant.</i>
 
 2. **Initiate Resource Creation**: Click on "Create a Resource".
 
@@ -301,7 +306,7 @@ To set up the Plan Overview, please perform the following steps:
 Setting up a Preview Audience allows a select group to access and verify your offer before it goes live. This preview version is only available to the audience you designate. To include individuals in your preview audience, you'll need to use either their Azure Active Directory (AAD) or Microsoft Account (MSA) email addresses. Here's how to set it up:
 
    1. **Navigate to Preview Audience**: Start by going to the “Preview Audience” section.
-   2. **Add Email Addresses**: Input the “Azure Active Directory or Microsoft Account email address” that was recorded during ["Pre-Requisite 4"](#pre-requisite-4).
+   2. **Add Email Addresses**: Input the “Azure Active Directory or Microsoft Account email address” that was recorded during ["Pre-Requisite 4"](#pre-requisite-4). Make sure to add the emails of everyone who you want to use to test the Customer/Buyer experience.
    3. **Save the Draft**: After adding the email addresses, click the "Save Draft" button to secure your changes.
 
 Ensuring that your preview audience is correctly set up will facilitate a smoother verification process for your offer’s details before they are made publicly available.
@@ -333,7 +338,7 @@ In this step, you will link the offer to the "Commercial Marketplace SaaS Accele
       - **Landing Page URL**: Input the appropriate URL where users will land when they access your offer.  This is the landing page of the SaaS Accelerator portal (eg https://mpndemo-portal.azurewebsites.net)
       - **Connection Webhook**: Provide the connection webhook that will be used to communicate with the offer.  This is the landing page URL with /Api/AzureWebhook added (eg https://mpndemo-portal.azurewebsites.net/Api/AzureWebhook)
       - **Microsoft Entra Tenant ID**: Insert the tenant ID related to Microsoft Entra for your single tenant app registration.
-      - **Microsoft Entra Identity Application ID**: Specify the application ID from Microsoft Entra Identity for your single tenant app registration.
+      - **Microsoft Entra Identity Application ID**: Specify the application ID from Microsoft Entra Identity for your single tenant app registration. This is to allow communication with the Marketplace APIs.
 
 Ensure that all the provided details are accurate and correspond to the information gathered in the initial steps, as this will establish the essential connections for your offer’s functionality in the Commercial Marketplace.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
